@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "br.com.playonadev.eletriccarapp"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "br.com.playonadev.eletriccarapp"
