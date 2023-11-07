@@ -7,4 +7,11 @@
     <string name="bateria">Bateria</string>
     <string name="potencia">Potência</string>
     <string name="recarga">Recarga</string>
+    <string name="preco_kwh">Preço KwH</string>
+    <string name="km_percorrido">Km Percorrido</string>
+    <string name="calcular">Calcular</string>
+    <string name="_93_4_kwh">93,4 kWh</string>
+    <string name="preco_car">R$ 1.000.000,00</string>
+    <string name="_646_cv">646 cv</string>
+    <string name="_30_min">30 Min</string>
 </resources>
