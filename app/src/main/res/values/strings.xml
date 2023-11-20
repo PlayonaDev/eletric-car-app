@@ -14,4 +14,5 @@
     <string name="preco_car">R$ 1.000.000,00</string>
     <string name="_646_cv">646 cv</string>
     <string name="_30_min">30 Min</string>
+    <string name="calcular_autonomia">Calcular Autonomia</string>
 </resources>

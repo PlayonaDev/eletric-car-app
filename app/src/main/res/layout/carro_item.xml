@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_car"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:cardBackgroundColor="@color/iron"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="6dp"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_card_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
+
+            /* Image View - Visual do Carro */
+
+            <ImageView
+                android:id="@+id/iv_image"
+                android:layout_width="wrap_content"
+                android:layout_height="120dp"
+                android:src="@drawable/car03"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="MissingConstraints" />
+
+            /* Text View - Preço do Carro */
+
+            <TextView
+                android:id="@+id/tv_preco"
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/preco"
+                android:textColor="@color/casal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_image" />
+
+            <TextView
+                android:id="@+id/tv_preco_value"
+                style="@style/TextAppearance.AppCompat.Body1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/preco_car"
+                android:textColor="@color/casal"
+                app:layout_constraintStart_toEndOf="@+id/tv_preco"
+                app:layout_constraintTop_toBottomOf="@+id/iv_image" />
+
+            /* Text View - Bateria */
+
+            <TextView
+                android:id="@+id/tv_bateria"
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/bateria"
+                android:textColor="@color/casal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_preco" />
+
+            <TextView
+                android:id="@+id/tv_bateria_value"
+                style="@style/TextAppearance.AppCompat.Body1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="5dp"
+                android:text="@string/_93_4_kwh"
+                android:textColor="@color/casal"
+                app:layout_constraintStart_toEndOf="@+id/tv_bateria"
+                app:layout_constraintTop_toBottomOf="@+id/tv_preco_value" />
+
+            /* Text View - Potência */
+
+            <TextView
+                android:id="@+id/tv_potencia"
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/potencia"
+                android:textColor="@color/casal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_bateria" />
+
+            <TextView
+                android:id="@+id/tv_potencia_value"
+                style="@style/TextAppearance.AppCompat.Body1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="5dp"
+                android:text="@string/_646_cv"
+                android:textColor="@color/casal"
+                app:layout_constraintStart_toEndOf="@+id/tv_potencia"
+                app:layout_constraintTop_toBottomOf="@+id/tv_bateria_value" />
+
+            /* Text View - Recarga */
+
+            <TextView
+                android:id="@+id/tv_recarga"
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/recarga"
+                android:textColor="@color/casal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_potencia" />
+
+            <TextView
+                android:id="@+id/tv_recarga_value"
+                style="@style/TextAppearance.AppCompat.Body1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="5dp"
+                android:text="@string/_30_min"
+                android:textColor="@color/casal"
+                app:layout_constraintStart_toEndOf="@+id/tv_recarga"
+                app:layout_constraintTop_toBottomOf="@+id/tv_potencia_value" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
