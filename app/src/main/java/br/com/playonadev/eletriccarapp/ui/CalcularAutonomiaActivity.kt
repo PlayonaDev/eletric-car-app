@@ -1,12 +1,17 @@
 package br.com.playonadev.eletriccarapp.ui
 
+import android.os.AsyncTask
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import br.com.playonadev.eletriccarapp.R
+import java.lang.Exception
+import java.net.HttpURLConnection
+import java.net.URL
 
 class CalcularAutonomiaActivity : AppCompatActivity() {
 
@@ -14,7 +19,7 @@ class CalcularAutonomiaActivity : AppCompatActivity() {
     lateinit var kmPercorrido: EditText
     lateinit var resultado: TextView
     lateinit var btnCalcular: Button
-    lateinit var btnBack : ImageView
+    lateinit var btnBack: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

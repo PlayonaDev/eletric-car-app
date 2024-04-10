@@ -87,7 +87,7 @@
             <TextView
                 android:id="@+id/tv_potencia"
                 style="@style/TextAppearance.AppCompat.Body2"
-                android:layout_width="60dp"
+                android:layout_width="65dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:text="@string/potencia"
@@ -100,8 +100,8 @@
                 style="@style/TextAppearance.AppCompat.Body1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
                 android:layout_marginTop="5dp"
+                android:layout_marginStart="10dp"
                 android:text="@string/_646_cv"
                 android:textColor="@color/casal"
                 app:layout_constraintStart_toEndOf="@+id/tv_potencia"

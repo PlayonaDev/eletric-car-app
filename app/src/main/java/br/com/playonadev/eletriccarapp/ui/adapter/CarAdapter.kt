@@ -22,7 +22,7 @@ class CarAdapter(private val carros: List<Carro>) : RecyclerView.Adapter<CarAdap
         holder.recarga.text = carros[position].recarga
     }
 
-    //Pega a quantidade de carors da lista
+    //Pega a quantidade de carros da lista
     override fun getItemCount(): Int = carros.size
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
