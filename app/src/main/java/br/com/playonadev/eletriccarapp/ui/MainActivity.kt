@@ -26,7 +26,6 @@ class MainActivity : AppCompatActivity() {
         viewPager = findViewById(R.id.vp_view_pager)
     }
 
-
     fun setupTabs() {
         val tabsAdapter = TabAdapter(this)
         viewPager.adapter = tabsAdapter

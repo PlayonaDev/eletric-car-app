@@ -1,7 +1,8 @@
 <resources>
-    <string name="app_name">EletricCarApp</string>
-    <string name="title">EletricCarApp</string>
+    <string name="app_name">SearchCarsTech</string>
+    <string name="title">New Tech Cars</string>
     <string name="carros">Carros</string>
+    <string name="no_wifi">Ops, sem conexão com a Rede!</string>
     <string name="favoritos">Favoritos</string>
     <string name="preco">Preço</string>
     <string name="bateria">Bateria</string>
@@ -15,4 +16,5 @@
     <string name="_646_cv">646 cv</string>
     <string name="_30_min">30 Min</string>
     <string name="calcular_autonomia">Calcular Autonomia</string>
+    <string name="response_error">Erro na resposta do servidor</string>">
 </resources>
