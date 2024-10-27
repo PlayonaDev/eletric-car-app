@@ -17,4 +17,5 @@
     <string name="_30_min">30 Min</string>
     <string name="calcular_autonomia">Calcular Autonomia</string>
     <string name="response_error">Erro na resposta do servidor</string>">
+    <string name="no_wifi">Ops, não há internet disponível</string>
 </resources>

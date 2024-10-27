@@ -2,6 +2,7 @@ package br.com.playonadev.eletriccarapp.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.viewpager2.widget.ViewPager2
 import br.com.playonadev.eletriccarapp.R
 import br.com.playonadev.eletriccarapp.ui.adapter.TabAdapter
@@ -9,6 +10,7 @@ import com.google.android.material.tabs.TabLayout
 
 
 class MainActivity : AppCompatActivity() {
+    private val TAG = "MainActivity"
 
     lateinit var tabLayout: TabLayout
     lateinit var viewPager: ViewPager2

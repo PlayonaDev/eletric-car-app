@@ -7,6 +7,7 @@ import android.net.NetworkCapabilities
 import android.os.AsyncTask
 import android.os.Build
 import android.os.Bundle
+import android.util.Base64InputStream
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -31,6 +32,10 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.create
+import java.io.BufferedReader
+import java.io.InputStream
+import java.io.InputStreamReader
+import java.lang.Exception
 import java.net.HttpURLConnection
 import java.net.URL
 
@@ -42,6 +47,7 @@ class CarFragment : Fragment() {
     lateinit var noInternetImage: ImageView
     lateinit var noInternetText : TextView
     lateinit var carsApi : CarsApi
+
 
     var carrosArray : ArrayList<Carro> = ArrayList()
 
@@ -64,13 +70,14 @@ class CarFragment : Fragment() {
         super.onResume()
         if(checkForInternet(context)){
             getAllCars()
-        //callService() -> Outro mètodo de chamar serviço
+            //callService() -> Outro mètodo de chamar serviço
         } else {
             emptyState()
         }
     }
 
-    fun setupRetrofit() {
+
+    fun setupRetrofit(){
         val retrofit = Retrofit.Builder()
             .baseUrl("https://igorbag.github.io/cars-api/")
             .addConverterFactory(GsonConverterFactory.create())
@@ -106,7 +113,9 @@ class CarFragment : Fragment() {
         listaCarros.isVisible = false
         noInternetText.isVisible = true
         noInternetImage.isVisible = true
+        carsApi = retrofit.create(CarsApi::class.java)
     }
+
 
     fun setupView(view: View){
         view.apply {
@@ -115,6 +124,7 @@ class CarFragment : Fragment() {
             progress = findViewById(R.id.pb_loader)
             noInternetText = findViewById(R.id.tv_no_wifi)
             noInternetImage = findViewById(R.id.iv_empty_state)
+
         }
     }
 
@@ -185,6 +195,7 @@ class CarFragment : Fragment() {
                 val responseCode = urlConnection.responseCode
 
                 if(responseCode == HttpURLConnection.HTTP_OK){
+
                     val response = urlConnection.inputStream.bufferedReader().use { it.readText() }
                     publishProgress(response)
                 } else {
@@ -195,7 +206,6 @@ class CarFragment : Fragment() {
             } finally {
                 urlConnection?.disconnect()
             }
-
             return " "
         }
 
@@ -241,6 +251,7 @@ class CarFragment : Fragment() {
             //setupList(carrosArray)
             } catch (ex: Exception){
                 Log.e("Erro ->", ex.message.toString())
+
             }
         }
     }
