@@ -1,5 +1,6 @@
 package br.com.playonadev.eletriccarapp.ui
 
+import android.content.Context
 import android.os.AsyncTask
 import android.os.Bundle
 import android.util.Log
@@ -26,6 +27,12 @@ class CalcularAutonomiaActivity : AppCompatActivity() {
         setContentView(R.layout.activity_calcular_autonomia)
         setupView()
         setupListeners()
+        setupCachedResult()
+    }
+
+    private fun setupCachedResult() {
+        val valorCalculado = getSharePref()
+        resultado.text = valorCalculado.toString()
     }
 
     fun setupView() {
@@ -53,5 +60,19 @@ class CalcularAutonomiaActivity : AppCompatActivity() {
         val result = preco / km
 
         resultado.text = result.toString()
+        savaSharedPref(result)
+    }
+
+    fun savaSharedPref(result: Float){
+        val sharePref = getPreferences(Context.MODE_PRIVATE) ?: return
+        with(sharePref.edit()){
+            putFloat(getString(R.string.saved_calc), result)
+            apply()
+        }
+    }
+
+    fun getSharePref(): Float {
+        val sharePref = getPreferences(Context.MODE_PRIVATE)
+        return sharePref.getFloat(getString(R.string.saved_calc), 0.0f)
     }
 }
