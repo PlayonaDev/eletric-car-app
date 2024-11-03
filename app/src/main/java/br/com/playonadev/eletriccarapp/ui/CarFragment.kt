@@ -7,7 +7,6 @@ import android.net.NetworkCapabilities
 import android.os.AsyncTask
 import android.os.Build
 import android.os.Bundle
-import android.util.Base64InputStream
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -22,6 +21,7 @@ import androidx.recyclerview.widget.RecyclerView
 import br.com.playonadev.eletriccarapp.R
 import br.com.playonadev.eletriccarapp.ui.adapter.CarAdapter
 import br.com.playonadev.eletriccarapp.ui.data.CarsApi
+import br.com.playonadev.eletriccarapp.ui.data.local.CarRepository
 import br.com.playonadev.eletriccarapp.ui.domain.Carro
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import org.json.JSONArray
@@ -31,10 +31,6 @@ import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.create
-import java.io.BufferedReader
-import java.io.InputStream
-import java.io.InputStreamReader
 import java.lang.Exception
 import java.net.HttpURLConnection
 import java.net.URL
@@ -113,7 +109,6 @@ class CarFragment : Fragment() {
         listaCarros.isVisible = false
         noInternetText.isVisible = true
         noInternetImage.isVisible = true
-        carsApi = retrofit.create(CarsApi::class.java)
     }
 
 
@@ -133,6 +128,9 @@ class CarFragment : Fragment() {
         listaCarros.apply {
             isVisible = true
             adapter = carroAdapter
+        }
+        carroAdapter.carItemLister = { carro ->
+           val isSaved = CarRepository(requireContext()).saveIfNotExist(carro)
         }
     }
 
@@ -239,7 +237,8 @@ class CarFragment : Fragment() {
                         bateria = bateria,
                         potencia = potencia,
                         recarga = recarga,
-                        urlPhoto = urlPhoto
+                        urlPhoto = urlPhoto,
+                        isFavorite = false
                     )
 
                     carrosArray.add(model)
